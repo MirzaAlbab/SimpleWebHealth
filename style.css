@@ -1,0 +1,60 @@
+body{
+    background-color: #F6F8FC;
+    box-sizing: border-box;
+}
+.log{
+    margin-top: 100px;
+}
+.nav-link{
+    margin-right: 50px;
+}
+.navbar{
+    padding-left: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(103,104,105,.5);
+}
+.title{
+    font-size: 25px;
+    font-style:initial;
+    font-weight: 500;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.form-label{
+    font-weight: 500;
+    margin-top: 5px;
+}
+.bg{
+    background-color:#ffffff;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    margin-top: -40px;
+    z-index: -1;
+    border-radius: 40px;
+    box-shadow: 2px 0px 5px 2px rgb(84, 92, 126);
+}
+.tombol{
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+.form-control{
+    border-radius: 10px;
+}
+.agree{
+    margin-top: 10px;
+    margin-left:-280px ;
+}
+.row h5{
+    font-size: 15px;
+
+}
+.klarifikasi{
+    margin-left: 50px;
+}
+.klarifikasi a{
+    text-decoration: none;
+}
