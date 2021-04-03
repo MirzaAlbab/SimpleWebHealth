@@ -17,7 +17,7 @@ body{
     font-size: 25px;
     font-style:initial;
     font-weight: 500;
-    margin-top: 100px;
+    padding-top: 100px;
     text-transform: uppercase;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -58,7 +58,8 @@ body{
 
 @media (max-width: 576px) {
     .bg{
-        width: 360px;
+        width: 480px;
+        margin-top: -45px;
     }
     .title{
         font-size: 18px;
