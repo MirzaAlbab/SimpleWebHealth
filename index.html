@@ -13,19 +13,19 @@
     <title>Login</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Covers</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto navigasi">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="register.html">Registrasi</a>
-                <a class="nav-link" href="#">Login</a>
-                </div>
-            </div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <a class="navbar-brand" href="#">Covers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-item nav-link active" href="#">Home</a>
+            <a class="nav-item nav-link" href="register.html">Register</a>
+            <a class="nav-item nav-link" href="index.html">Login</a>
+          </div>
+        </div>
         </div>
     </nav>
     <div class="container-fluid">
@@ -35,7 +35,7 @@
         </div>
         <form method="post" class="log">
             <div class="row justify-content-center">
-                <div class="col-md-3">
+                <div class="col-sm-3">
                     <label for="E-mail" class="form-label">E-mail</label>
                     <input type="email" id="E-mail" class="form-control form-control-sm" placeholder="E-mail">
                 </div>
@@ -57,5 +57,11 @@
         </div>
         
     </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>
