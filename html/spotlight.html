@@ -1,26 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
     </style>
     <!-- My CSS -->
-    <link rel="stylesheet" href="../css/stylespot.css">
+    <link rel="stylesheet" href="../css/stylespot.css" />
 
     <title>Spotlight</title>
   </head>
   <body>
     <nav class="navbar fixed-top navbar-expand-lg">
-        <div class="container">
+      <div class="container">
         <a class="navbar-brand" href="../index.html">Covers</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -28,7 +41,13 @@
             <a class="nav-item nav-link active" href="../index.html">Home</a>
             <a class="nav-item nav-link" href="#">Spotlight</a>
             <div class="btn-group">
-              <button type="button" class="btn dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button
+                type="button"
+                class="btn dropdown-toggle nav-link"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Register
               </button>
               <div class="dropdown-menu">
@@ -39,62 +58,64 @@
             <a class="nav-item nav-link" href="login.html">Login</a>
           </div>
         </div>
-        </div>
+      </div>
     </nav>
-    <div class="container story">
-        <a class="sub" href="story.html"><button type="button" class="btn tombol d-flex">Submit your story</button></a>
-    </div>
+
     <div class="container artikel">
-        <h1>Artikel Terpopuler</h1>
-        <div class="card bg-dark text-white main">
-            <img src="../img/plcimage2.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text">Last updated 3 mins ago</p>
-            </div>
-        </div>
+      <h1>Artikel Terpopuler</h1>
+      <div id="news"></div>
     </div>
-    <div class="container mt-3">
-        <h2>Artikel Terbaru</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                <img src="../img/plcimage1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="../img/plcimage4.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="../img/plcimage5.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                </div>
-            </div>   
-        </div>
-    </div>
-        
-            
-    
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script>
+      fetch("https://saurav.tech/NewsAPI/everything/bbc-news.json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          // looping news with 3 column per row using bootstrap with card style
+          let news = document.getElementById("news");
+          let row = document.createElement("div");
+          row.setAttribute("class", "row");
+          news.appendChild(row);
+          for (let i = 0; i < data.articles.length; i++) {
+            let col = document.createElement("div");
+            col.setAttribute("class", "col-md-3");
+            row.appendChild(col);
+            let card = document.createElement("div");
+            card.setAttribute("class", "card");
+            col.appendChild(card);
+            let img = document.createElement("img");
+            img.setAttribute("class", "card-img-top");
+            img.setAttribute("src", data.articles[i].urlToImage);
+            card.appendChild(img);
+            let cardbody = document.createElement("div");
+            cardbody.setAttribute("class", "card-body");
+            card.appendChild(cardbody);
+            let title = document.createElement("h5");
+            title.setAttribute("class", "card-title");
+            title.innerHTML = data.articles[i].title;
+            cardbody.appendChild(title);
+            let desc = document.createElement("p");
+            desc.setAttribute("class", "card-text");
+            desc.innerHTML = data.articles[i].description;
+            cardbody.appendChild(desc);
+            let link = document.createElement("a");
+            link.setAttribute("class", "btn btn-primary");
+            link.setAttribute("href", data.articles[i].url);
+            link.setAttribute("target", "_blank");
+            link.innerHTML = "Read More";
+            cardbody.appendChild(link);
+          }
+        });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
