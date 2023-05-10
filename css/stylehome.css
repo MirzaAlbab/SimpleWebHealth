@@ -57,7 +57,7 @@ body {
   border-radius: 10px;
 }
 .jumbotron {
-  background-image: url("/img/dokter.webp");
+  background-image: url("../img/dokter.webp");
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(90%);
